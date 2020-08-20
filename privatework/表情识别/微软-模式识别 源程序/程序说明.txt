@@ -1,0 +1,30 @@
+各函数说明：
+main.m              :主函数，整个程序的入口，调用其他函数；
+create_Gabor.m      :创建Gabor滤波器；
+create_samplesData.m:创建JAFFE样本信息矩阵，存放样本库的名字，个体归属，标签，三个ROI数据；
+create_testSet.m    :创建测试数据集；
+create_trainSet.m   :创建训练数据集；
+feature_Extract.m   :特征提取，Gabor滤波提取特征，然后抽取，然后PCA降维；
+feature_PCA1.m      :采用Matlab自带PCA主元分析工具箱降维，速度较快，可以设定最后保存数据维数；
+feature_PCA2.m      :采用累计方差贡献率的主元分析，可以设定保留原数据集的百分比信息；
+gabor.m             :Gabor滤波函数，设计到傅里叶变换，卷积；
+getFace.m           :手动切割人脸函数；
+getFace_eyeDetect.m :自动检测人眼函数；
+getROI.m            :手动切割三个ROI区域（眼睛、鼻子、嘴巴）；
+getROI_lightCom.m   :光照补偿，如果测试图片时彩色图片，则对图片进行光照补偿处理，灰度图片不会进行此处理。
+
+目录说明：
+JAFFE    :原始表情数据库
+JAFFE_CUT:手动切割的人脸库
+JAFFE_ROI:从切好的人脸库里，手动切割的每张人脸的ROI库
+Temp     :测试图片目录几张测试图片也在本目录下。
+
+Temp目录说明：
+测试原图片分别为：1.jpg 2.jpg 3.jpg 4.jpg ......
+每张图片切割好的ROI也保存在此目录下，三个ROI分别是eye1.jpg,nose1.jpg,mouth1.jpg......
+用外部图片测试时，只需要在图片选择窗口里选取本目录下的1.jpg 2.jpg 3.jpg 4.jpg ......
+用JAFFE库测试时，只需要在图片选择窗口里选取JAFFE目录下的对应图片即可。
+
+
+程序运行说明：
+直接运行main.m函数即可，即可弹出程序菜单。同时在matlab明令窗口里出现提示信息，并不时会需要在命令窗口输入需要参数。
